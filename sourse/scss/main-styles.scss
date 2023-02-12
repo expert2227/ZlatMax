@@ -62,7 +62,6 @@ body {
   }
   // .top-header__pers-area
   &__pers-area {
-    padding-right: 10px;
     display: flex;
     align-items: center;
     &:hover {
@@ -226,6 +225,9 @@ body {
   // .actions-body__phones
   &__phones {
     position: relative;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
   }
   // .actions-body__favorite
   &__favorite {
@@ -237,7 +239,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
   }
 }
 
@@ -284,24 +285,60 @@ body {
   opacity: 1;
 }
 .phones-body-callback {
+  font-weight: 700;
+  line-height: 22px;
+  color: $mainOrange;
+  transition: 0.2s linear;
+}
+.phones-body-callback:hover {
+  color: #9e7421;
+  transform: scale(1.05);
 }
 .phones-body-arrow {
   position: absolute;
   right: -30px;
   top: 5px;
   color: $mainOrange;
-  padding-left: rem(10px);
+  transition: 0.2s linear;
+  padding: 0px 0px 0px rem(10px);
+  //transition: background 0.3s ease-in, color 0.2s linear;
+}
+.phones-body-arrow:hover {
+  color: #9e7421;
+  transform: scale(1.2);
 }
 .cart-body {
   // .cart-body_button
   &_button {
+    font-size: rem(16px);
+    line-height: rem(19.5px);
+    color: $mainOrange;
   }
   // .cart-body__info
   &__info {
   }
   // .cart-body__sum
-  &__sum {
+  &__sum span {
+    font-size: rem(16px);
+    line-height: rem(19.5px);
+    color: rgba(0, 0, 0, 1);
   }
 }
 .cart-body-icon {
+  margin-right: rem(15px);
+  position: relative;
 }
+.cart-body-icon span {
+  background-color: $mainOrange;
+  width: rem(14px);
+  height: rem(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+  font-size: rem(9px);
+  top: -2px;
+  right: -5px;
+}
+
