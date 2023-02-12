@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]::before, [class*=" _icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-Vector-2-Stroke:before {
+  content: "\e917";
+}
+._icon-arrov_up:before {
+  content: "\e900";
+}
+._icon-arrow-back_page:before {
+  content: "\e901";
+}
+._icon-burger-menu:before {
+  content: "\e902";
+}
+._icon-compare:before {
+  content: "\e903";
+}
+._icon-footer-phone:before {
+  content: "\e905";
+}
+._icon-footer-time:before {
+  content: "\e906";
+}
+._icon-header_bottom-arrov:before {
+  content: "\e907";
+}
+._icon-header_favorite:before {
+  content: "\e909";
+}
+._icon-header-search:before {
+  content: "\e90a";
+}
+._icon-location_header:before {
+  content: "\e90b";
+}
+._icon-logo-main:before {
+  content: "\e90c";
+}
+._icon-question:before {
+  content: "\e90d";
+}
+._icon-right-arrov_main:before {
+  content: "\e90e";
+}
+._icon-Star:before {
+  content: "\e910";
+}
+._icon-top_header-pers_account:before {
+  content: "\e911";
+}
