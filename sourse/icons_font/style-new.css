@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('icomoon.ttf') format('truetype');
+  src: url('icomoon-new.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="_icon-"]::before, [class*=" _icon-"]::before {
+[class^="icon-"]::before, [class*=" icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   font-style: normal;
@@ -20,51 +20,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-Vector-2-Stroke:before {
-  content: "\e917";
-}
-._icon-arrov_up:before {
+.icon-arrow_up:before {
   content: "\e900";
 }
-._icon-arrow-back_page:before {
+.icon-arrow-back:before {
   content: "\e901";
 }
-._icon-burger-menu:before {
+.icon-burger-menu:before {
   content: "\e902";
 }
-._icon-compare:before {
+.icon-compare:before {
   content: "\e903";
 }
-._icon-footer-phone:before {
+.icon-footer_time:before {
+  content: "\e904";
+}
+.icon-footer_email:before {
   content: "\e905";
 }
-._icon-footer-time:before {
+.icon-footer_phone:before {
   content: "\e906";
 }
-._icon-header_bottom-arrov:before {
+.icon-header_cart:before {
   content: "\e907";
 }
-._icon-header_favorite:before {
+.icon-header_bottom-arrov:before {
+  content: "\e908";
+}
+.icon-header_favorite:before {
   content: "\e909";
 }
-._icon-header-search:before {
+.icon-header_search:before {
   content: "\e90a";
 }
-._icon-location_header:before {
+.icon-location_header:before {
   content: "\e90b";
 }
-._icon-logo-main:before {
+.icon-logo-main:before {
   content: "\e90c";
 }
-._icon-question:before {
+.icon-rubles:before {
   content: "\e90d";
 }
-._icon-right-arrov_main:before {
+.icon-Star:before {
   content: "\e90e";
 }
-._icon-Star:before {
-  content: "\e910";
+.icon-top_header-pers_account:before {
+  content: "\e90f";
 }
-._icon-top_header-pers_account:before {
-  content: "\e911";
+.icon-arrow-light:before {
+  content: "\e910";
 }
