@@ -11,7 +11,14 @@ document.addEventListener("click", (e) => {
    }
    e.preventDefault();
 });
-
+// this block code added icons (.icon-arrow-up) on elements was have attribute data-parent
+function addIcons () {
+   const dataElement = document.querySelectorAll('[data-parent]');
+   dataElement.forEach((el) => {
+      el.classList.add('icon-arrow_up');
+   })
+}
+addIcons();
 /**
  * this function gets objects from event and opens or closes the submenu
  */

@@ -71,3 +71,29 @@
 .icon-arrow-light:before {
   content: "\e910";
 }
+
+
+
+/*
+это способ с пом которого в самом видео автор 
+подключал свой иконочный шрифт и потом уже в самом 
+scss подключал прямо что-то новое, все достаточно удобно 
+я не буду на данном этапе пользоваться этим методом,
+просто подключу его через медиа запросы и класс с пом js
+%ic {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+  &:before {
+    @extend %ic;
+    display: block;
+  }
+}
+*/

@@ -11,6 +11,24 @@ $fz: 18px;
    $remSize: calc($size / $fz);
    @return $remSize * 1rem;
 }
+
+//test pattern by icon-font
+%ic {
+   font-family: "icomoon";
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+[class*="icon-"] {
+   &:before {
+      @extend %ic;
+      display: block;
+   }
+}
 // MAIN BLOCK STYLES
 html,
 body {
@@ -74,6 +92,9 @@ body {
             text-decoration: underline;
          }
       }
+      &::before:hover {
+         text-decoration: none;
+      }
       &::before {
          font-size: rem(32px);
          margin-right: rem(15px);
@@ -91,11 +112,13 @@ body {
       display: flex;
       column-gap: rem(60px);
       row-gap: rem(5px);
-      padding-right: 15px;
       flex-wrap: wrap;
       @media (max-width: 991.98px) {
          flex-direction: column;
          row-gap: 25px;
+      }
+      @media (min-width: 991.98px) {
+         padding-right: 15px;
       }
    }
    // .menu-top-header__item
@@ -133,7 +156,7 @@ body {
          }
       }
       @media (max-width: 991.98px) {
-         font-size: 22px;
+         font-size: rem(22px);
       }
    }
    @media (max-width: 991.98px) {
@@ -557,10 +580,20 @@ body {
    }
    // .menu-catalog__link
    &__link {
-      padding: rem(25px) 0px;
       transition: color 0.3s ease 0s;
       position: relative;
       line-height: rem(22px);
+      &[data-parent] {
+         @media (max-width: 991.98px) {
+            width: 100%;
+            flex-direction: row-reverse;
+            display: inline-flex;
+            justify-content: space-between;
+         }
+      }
+      @media (min-width: 991.98px) {
+         padding: rem(25px) 0px;
+      }
       &::after {
          content: "";
          position: absolute;
@@ -573,7 +606,7 @@ body {
          height: 1px;
          background-color: $mainOrange;
       }
-      @media (any-hover: hover) {
+      @media (min-width: 991.98px) {
          &:hover {
             color: $mainOrange;
             &::after {
@@ -587,6 +620,18 @@ body {
          &::after {
             opacity: 1;
             visibility: visible;
+         }
+      }
+      &::before {
+         display: none;
+      }
+      @media (max-width: 991.98px) {
+         &::before {
+            font-size: rem(8px);
+            display: inline-flex;
+            justify-content: space-between;
+            transform: rotate(90deg);
+            align-items: center;
          }
       }
    }
@@ -651,7 +696,6 @@ body {
    // .sub-menu-catalog__block
    &__block {
       display: none;
-      margin: 0 10px;
       @for $var from 1 to 6 {
          &_#{$var} {
             //justify-content: start;
@@ -664,21 +708,28 @@ body {
             display: block;
          }
       }
+      @media (min-width: 991.98px) {
+         margin: 0 10px;
+      }
    }
    // .sub-menu-catalog__container
    &__container {
    }
    // .sub-menu-catalog__category
    &__category {
-      font-weight: 700;
+      font-weight: 500;
       font-size: rem(16px);
       display: block;
       line-height: rem(19.5px);
-      padding: rem(30px) rem(15px) rem(30px) 0px;
+      padding: rem(15px) 0;
       @media (any-hover: hover) {
          &:hover {
             text-decoration: underline;
          }
+      }
+      @media (min-width: 991.98px) {
+         font-weight: 700;
+         padding: rem(30px) rem(15px) rem(30px) 0px;
       }
    }
    // .sub-menu-catalog__list
@@ -689,6 +740,9 @@ body {
       padding: rem(30px) rem(15px) rem(30px) 0;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      @media (max-width: 991.98px) {
+         display: none;
+      }
    }
    // .sub-menu-catalog__item
    &__item {
@@ -698,17 +752,23 @@ body {
    }
    // .sub-menu-catalog__link-category
    &__link-category {
-      font-size: rem(16px);
+      font-size: rem(22px);
       line-height: rem(19.5px);
       @media (any-hover: hover) {
          &:hover {
             text-decoration: underline;
          }
       }
+      @media (min-width: 991.98px) {
+         font-size: rem(16px);
+      }
    }
    // .sub-menu-catalog__footer
    &__footer {
       padding: rem(30px) rem(15px) rem(30px) 0;
+      @media (max-width: 991.98px) {
+         display: none;
+      }
    }
    // .sub-menu-catalog__all
    &__all {
