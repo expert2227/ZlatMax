@@ -5,9 +5,10 @@ const phoneBlock = document.querySelector(".phones-body__other-phones");
 document.addEventListener("click", (e) => {
    if (e.target.classList.contains("phones-body-arrow")) {
       phoneBlock.classList.toggle("phones-body__active");
-      //console.log(phoneBlock.classList);
+      phoneArrow.classList.toggle("phones-body-arrow__active");
    } else {
       phoneBlock.classList.remove("phones-body__active");
+      phoneArrow.classList.remove("phones-body-arrow__active");
    }
    e.preventDefault();
 });
