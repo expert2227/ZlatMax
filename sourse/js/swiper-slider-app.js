@@ -3,39 +3,39 @@ window.addEventListener("load", function () {
    /**
     * this code will add the ability to change slides in the main menu
     */
-   const allSwipers = document.querySelectorAll(".main-block__swiper");
+   const allSliders = document.querySelectorAll(".slide-main-block");
 
-   if (allSwipers) {
-      allSwipers.forEach((el, index) => {
+   if (allSliders) {
+      allSliders.forEach((el, index) => {
          index++;
-         el.dataset.swiper = index;
+         el.dataset.slider = index;
       });
-      addSwiperBullet(allSwipers);
+      addSliderBullet(allSliders);
       addBulletData();
    }
    /**
     * this function created and added to page elements, we'll be use their to navigation our slider
-    * @param {massive} allSwipers
+    * @param {massive} allSliders
     */
-   function addSwiperBullet(allSwipers) {
+   function addSliderBullet(allSliders) {
       let parentBullet = document.querySelector(".controlls-main-block__dotts");
-      for (let i = 0; i < allSwipers.length; i++) {
-         let swiper = allSwipers[i].dataset.swiper;
-         parentBullet.insertAdjacentHTML("beforeend", `<span class='swiper-pagination-bullet'></span>`);
+      for (let i = 0; i < allSliders.length; i++) {
+         let slider = allSliders[i].dataset.slider;
+         parentBullet.insertAdjacentHTML("beforeend", `<span class='slider-pagination-bullet'></span>`);
       }
-      parentBullet.firstElementChild.classList.add("swiper-pagination-bullet-active");
+      parentBullet.firstElementChild.classList.add("slider-pagination-bullet-active");
    }
    /**
-    * this function add data-bullet to crated element with classname = 'swiper-pagination-bullet'
+    * this function add data-bullet to crated element with classname = 'slider-pagination-bullet'
     */
    function addBulletData() {
-      let bullet = document.querySelectorAll(".swiper-pagination-bullet");
+      let bullet = document.querySelectorAll(".slider-pagination-bullet");
       for (let i = 0; i < bullet.length; i++) {
          bullet[i].dataset.bullet = i + 1;
       }
    }
 
-   const allBullets = document.querySelectorAll(".swiper-pagination-bullet");
+   const allBullets = document.querySelectorAll(".slider-pagination-bullet");
    if (allBullets) {
       allBullets.forEach((el) => {
          el.addEventListener("click", switchBullet);
@@ -46,25 +46,25 @@ window.addEventListener("load", function () {
       if (clickBullet.closest("[data-bullet]")) {
          event.preventDefault();
          const clickBulletId = clickBullet.dataset.bullet ? clickBullet.dataset.bullet : null;
-         const swiperId = document.querySelector(`[data-swiper="${clickBulletId}"]`);
-         if (swiperId) {
-            const activeSwiper = document.querySelector(".main-block-swiper-active");
-            const activeBullet = document.querySelector(".swiper-pagination-bullet-active");
+         const sliderId = document.querySelector(`[data-slider="${clickBulletId}"]`);
+         if (sliderId) {
+            const activeSlider = document.querySelector(".slide-main-block-active");
+            const activeBullet = document.querySelector(".slider-pagination-bullet-active");
             switchFraction(clickBulletId);
-            if (activeSwiper !== swiperId) {
-               activeSwiper.classList.remove("main-block-swiper-active");
-               swiperId.classList.add("main-block-swiper-active");
+            if (activeSlider !== sliderId) {
+               activeSlider.classList.remove("slide-main-block-active");
+               sliderId.classList.add("slide-main-block-active");
             }
             if (clickBullet !== activeBullet) {
-               activeBullet.classList.remove("swiper-pagination-bullet-active");
-               clickBullet.classList.add("swiper-pagination-bullet-active");
+               activeBullet.classList.remove("slider-pagination-bullet-active");
+               clickBullet.classList.add("slider-pagination-bullet-active");
             }
          }
       }
    }
    function switchFraction(clickBulletId) {
       if (clickBulletId) {
-         let allBullets = document.querySelectorAll(".swiper-pagination-bullet");
+         let allBullets = document.querySelectorAll(".slider-pagination-bullet");
          let countBullet = allBullets.length;
          let currentFraction = document.querySelector(".fraction-controll_current");
          let countFraction = document.querySelector(".fraction-controll_all");
