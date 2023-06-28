@@ -1,5 +1,18 @@
 "use strict";
 window.addEventListener("load", function () {
+   // Использование преобразований
+   //
+   var transforms = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
+   var transformProperty = getSupportedPropertyName(transforms);
+   // управление вендорными префиксами
+   function getSupportedPropertyName(properties) {
+      for (var i = 0; i < properties.length; i++) {
+         if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+         }
+      }
+      return null;
+   }
    /**
     * this code will add the ability to change slides in the main menu
     */
@@ -52,7 +65,7 @@ window.addEventListener("load", function () {
          const clickSliderId = document.querySelector(`[data-slider="${clickBulletId}"]`);
          const swiper = document.querySelector(".main-block__swiper");
          let moveX = clickBullet.dataset.coordinates;
-         swiper.style.transform = "translate3d(" + "-" + `${moveX}` + ", " + "0px, " + "0px)";
+         swiper.style[transformProperty] = "translate3d(" + "-" + `${moveX}` + ", " + "0px, " + "0px)";
          if (clickSliderId) {
             const activeSlider = document.querySelector(".slide-main-block-active");
             const activeBullet = document.querySelector(".slider-pagination-bullet-active");
